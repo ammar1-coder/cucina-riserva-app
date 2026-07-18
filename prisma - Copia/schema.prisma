@@ -1,0 +1,96 @@
+// Schema del database — Prisma
+// Per lo sviluppo locale usiamo SQLite (file singolo, zero configurazione).
+// Per la produzione (Vercel + Supabase/Neon) cambia il datasource in "postgresql"
+// e imposta DATABASE_URL nelle variabili d'ambiente. Vedi README.md.
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id           String   @id @default(cuid())
+  email        String   @unique
+  passwordHash String
+  restaurant   String
+  staffPin     String?  // PIN a 4 cifre per la modalità "personale" (accesso limitato)
+  stripeCustomerId     String?
+  subscriptionStatus   String?  @default("trial") // trial | active | past_due | canceled
+  plan                 String?  // essenziale | riserva | tenuta
+  createdAt    DateTime @default(now())
+  items        InventoryItem[]
+  menuItems    MenuItem[]
+  suppliers    Supplier[]
+  wasteLogs    WasteLog[]
+}
+
+model InventoryItem {
+  id           String   @id @default(cuid())
+  name         String
+  category     String
+  qty          Float
+  unit         String
+  threshold    Float
+  capacity     Float
+  barcode      String?
+  scanDeduct   Float    @default(1)
+  unitCost     Float    @default(0) // costo per unità — usato per il valore del magazzino e i report
+  updatedAt    DateTime @updatedAt
+  user         User     @relation(fields: [userId], references: [id])
+  userId       String
+  usedIn       MenuItemIngredient[]
+  wasteLogs    WasteLog[]
+  supplier     Supplier? @relation(fields: [supplierId], references: [id])
+  supplierId   String?
+
+  @@unique([userId, barcode])
+}
+
+model MenuItem {
+  id          String   @id @default(cuid())
+  name        String
+  barcode     String?
+  createdAt   DateTime @default(now())
+  user        User     @relation(fields: [userId], references: [id])
+  userId      String
+  ingredients MenuItemIngredient[]
+
+  @@unique([userId, barcode])
+}
+
+model MenuItemIngredient {
+  id              String        @id @default(cuid())
+  menuItem        MenuItem      @relation(fields: [menuItemId], references: [id], onDelete: Cascade)
+  menuItemId      String
+  inventoryItem   InventoryItem @relation(fields: [inventoryItemId], references: [id])
+  inventoryItemId String
+  quantityUsed    Float
+}
+
+model Supplier {
+  id        String   @id @default(cuid())
+  name      String
+  phone     String?
+  email     String?
+  notes     String?
+  createdAt DateTime @default(now())
+  user      User     @relation(fields: [userId], references: [id])
+  userId    String
+  items     InventoryItem[]
+}
+
+model WasteLog {
+  id              String        @id @default(cuid())
+  quantity        Float
+  estimatedCost   Float         @default(0)
+  reason          String?       // es. "scaduto", "rotto", "errore in cucina"
+  createdAt       DateTime      @default(now())
+  user            User          @relation(fields: [userId], references: [id])
+  userId          String
+  inventoryItem   InventoryItem @relation(fields: [inventoryItemId], references: [id])
+  inventoryItemId String
+}

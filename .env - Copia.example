@@ -1,0 +1,28 @@
+# Copia questo file in ".env" e compila i valori prima di avviare il progetto.
+
+# Sviluppo locale (SQLite, nessuna configurazione richiesta):
+DATABASE_URL="file:./dev.db"
+
+# Produzione (esempio con Postgres su Supabase o Neon):
+# DATABASE_URL="postgresql://utente:password@host:5432/nomedb?sslmode=require"
+
+# Chiave segreta per firmare i token di accesso — genera una stringa lunga e casuale.
+# Esempio per generarla: openssl rand -base64 32
+JWT_SECRET="cambia-questa-chiave-con-una-stringa-lunga-e-casuale"
+
+# Pagamenti (Stripe) — necessari solo per attivare gli abbonamenti reali.
+# Senza queste chiavi il sito funziona lo stesso, ma la pagina "Abbonamento"
+# mostrerà un messaggio che spiega come attivarle. Vedi il paragrafo
+# "Attivare i pagamenti" più sotto in questo file.
+STRIPE_SECRET_KEY=""
+STRIPE_WEBHOOK_SECRET=""
+STRIPE_PRICE_ESSENZIALE=""
+STRIPE_PRICE_RISERVA=""
+STRIPE_PRICE_TENUTA=""
+NEXT_PUBLIC_BASE_URL="http://localhost:3000"
+
+# Notifiche via email (opzionale) — usato per avvisare quando un articolo
+# sta per esaurirsi, anche se il ristoratore non ha l'app aperta.
+# Crea un account gratuito su https://resend.com per ottenere questa chiave.
+RESEND_API_KEY=""
+NOTIFY_FROM_EMAIL="avvisi@tuodominio.it"
