@@ -3,9 +3,9 @@ import { useRouter } from "next/router";
 import Logo from "../components/Logo";
 
 const PLANS = [
-  { key: "essenziale", name: "Essenziale", price: "18", features: ["1 sede", "Fino a 150 articoli", "Avvisi scorte basse"] },
-  { key: "riserva", name: "Riserva", price: "35", features: ["Articoli illimitati", "Ricette e scarico automatico", "Report mensili"], featured: true },
-  { key: "tenuta", name: "Tenuta", price: "58", features: ["Fino a 5 sedi", "Gestione fornitori", "Supporto dedicato"] },
+  { key: "essenziale", name: "Essenziale", price: "35", features: ["1 sede", "Fino a 150 articoli", "Avvisi scorte basse"] },
+  { key: "riserva", name: "Riserva", price: "50", features: ["Articoli illimitati", "Ricette e scarico automatico", "Report mensili"], featured: true },
+  { key: "tenuta", name: "Tenuta", price: "85", features: ["Fino a 5 sedi", "Gestione fornitori", "Supporto dedicato"] },
 ];
 
 export default function Billing() {
