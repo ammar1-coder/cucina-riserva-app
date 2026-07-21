@@ -26,9 +26,9 @@ const FEATURES = [
 ];
 
 const PLANS = [
-  { name: "Essenziale", price: "18", desc: "Per attività singole che iniziano a digitalizzare il magazzino.", features: ["1 sede", "Fino a 150 articoli", "Avvisi scorte basse", "Supporto via email"] },
-  { name: "Riserva", price: "35", desc: "Il piano più scelto dai ristoranti con cucina attiva ogni giorno.", features: ["1 sede", "Articoli illimitati", "Collegamento alle ricette", "Report mensili", "Supporto prioritario"], featured: true },
-  { name: "Tenuta", price: "58", desc: "Per gruppi con più sedi da gestire da un unico pannello.", features: ["Fino a 5 sedi", "Articoli illimitati", "Gestione fornitori", "Report avanzati", "Supporto dedicato"] },
+  { name: "Essenziale", price: "35", desc: "Per attività singole che iniziano a digitalizzare il magazzino.", features: ["1 sede", "Fino a 150 articoli", "Avvisi scorte basse", "Supporto via email"] },
+  { name: "Riserva", price: "50", desc: "Il piano più scelto dai ristoranti con cucina attiva ogni giorno.", features: ["1 sede", "Articoli illimitati", "Collegamento alle ricette", "Report mensili", "Supporto prioritario"], featured: true },
+  { name: "Tenuta", price: "85", desc: "Per gruppi con più sedi da gestire da un unico pannello.", features: ["Fino a 5 sedi", "Articoli illimitati", "Gestione fornitori", "Report avanzati", "Supporto dedicato"] },
 ];
 
 export default function Landing() {
