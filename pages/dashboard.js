@@ -285,7 +285,7 @@ export default function Dashboard() {
             <div className="row2">
               <input type="number" min="0" step="0.1" placeholder="Quantità" value={newItem.qty} onChange={(e) => setNewItem({ ...newItem, qty: e.target.value })} />
               <select value={newItem.unit} onChange={(e) => setNewItem({ ...newItem, unit: e.target.value })}>
-                <option value="kg">kg</option><option value="L">L</option><option value="pz">pz</option><option value="mazzi">mazzi</option>
+                <option value="kg">kg</option><option value="g">g</option><option value="L">L</option><option value="pz">pz</option><option value="mazzi">mazzi</option>
               </select>
             </div>
             <input type="number" min="0" step="0.1" placeholder="Soglia minima" value={newItem.threshold} onChange={(e) => setNewItem({ ...newItem, threshold: e.target.value })} />
