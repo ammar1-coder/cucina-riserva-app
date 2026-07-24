@@ -38,7 +38,7 @@ export default function Landing() {
   return (
     <div className="land">
       <header className="lnav">
-        <div className="brand"><Logo size={26} /> Cucina <span>Riserva</span></div>
+        <div className="brand"><Logo size={26} /> Scorta <span>Riserva</span></div>
         <nav className="lnav-links">
           <a href="#funzioni">Funzioni</a>
           <a href="#prezzi">Prezzi</a>
@@ -54,7 +54,7 @@ export default function Landing() {
         <div className="hero-inner">
           <div className="eyebrow"><span className="eyebrow-dot" />Gestione magazzino per ristoranti</div>
           <h1 className="hero-title">La tua dispensa,<br /><span>gestita come merita.</span></h1>
-          <p className="hero-sub">Cucina Riserva porta ordine ed eleganza nel magazzino del tuo ristorante — meno sprechi, zero sorprese, controllo totale.</p>
+          <p className="hero-sub">Scorta porta ordine ed eleganza nel magazzino del tuo ristorante — meno sprechi, zero sorprese, controllo totale.</p>
           <div className="hero-cta">
             <button className="btn-gold" onClick={goRegister}><span>Inizia gratis per 14 giorni</span></button>
             <a className="btn-outline" href="#funzioni">Guarda come funziona</a>
@@ -119,8 +119,8 @@ export default function Landing() {
       </section>
 
       <footer className="lfoot">
-        <div className="brand small"><Logo size={20} /> Cucina <span>Riserva</span></div>
-        <p>© 2026 Cucina Riserva. Tutti i diritti riservati.</p>
+        <div className="brand small"><Logo size={20} /> Scorta <span>Riserva</span></div>
+        <p>© 2026 Scorta. Tutti i diritti riservati.</p>
       </footer>
     </div>
   );
