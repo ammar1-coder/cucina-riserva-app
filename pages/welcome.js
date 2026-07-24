@@ -22,7 +22,7 @@ export default function Home() {
       <div className="splash-glow" />
       <Logo size={80} animated />
       <div className="rule" />
-      <h1 className="wordmark">CUCINA <span>RISERVA</span></h1>
+      <h1 className="wordmark">Scorta <span>RISERVA</span></h1>
       <p className="tagline">Benvenuto. L'eccellenza in cucina inizia dalla dispensa.</p>
       <span className="skip-hint">tocca per continuare</span>
     </div>
