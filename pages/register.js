@@ -42,7 +42,7 @@ export default function Register() {
       <div className="login-card">
         <Logo size={40} />
         <h2>Crea il tuo account</h2>
-        <p className="sub">Registra il tuo ristorante su Cucina Riserva</p>
+        <p className="sub">Registra il tuo ristorante su Scorta</p>
 
         <label>Nome ristorante</label>
         <input placeholder="Trattoria del Borgo" value={restaurant} onChange={(e) => setRestaurant(e.target.value)} />
