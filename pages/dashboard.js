@@ -158,7 +158,7 @@ export default function Dashboard() {
   return (
     <div>
       <header className="topnav">
-        <div className="brand"><Logo size={22} /> Cucina <span>Riserva</span></div>
+        <div className="brand"><Logo size={22} /> Scorta <span>Riserva</span></div>
         <nav className="tabs">
           <span className="tab active">Magazzino</span>
           <span className="tab" onClick={() => router.push("/fornitori")}>Fornitori</span>
